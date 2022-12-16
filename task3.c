@@ -6,7 +6,7 @@ int getArray(int arr[], int len); /* mission 1- getArray */
 void polynomialCalc(int p,  int d, int polr[], int coeff[]); /* mission 2- polynomialCalc */
 void minPlusConv(int p, int len, int a[], int b[], int c[]); /* mission 3- minPlusconv */
 int power(int base, int power); /* func that calculates the power of */
-int modolo(int num, int p); /* func that calculates modolo*/
+int modulo(int num, int p); /* func that calculates modulo*/
 int max(int num1, int num2); /* func that calculates max of 2 numbers */
 int min(int num1, int num2); /* func that calculates min of 2 numbers */
 
@@ -68,7 +68,7 @@ void polynomialCalc(int p,  int d, int polr[MAX], int coeff[MAX])
         {
             sum += coeff[j]*power(i, j); /* calculating the result into sum */
         }
-        polr[i]= modolo(sum, p); /* inserting modolo the result into the array */
+        polr[i]= modulo(sum, p); /* inserting modulo the result into the array */
     }
 }
 
@@ -79,7 +79,7 @@ void minPlusConv(int p, int len, int a[MAX], int b[MAX], int c[MAX])
     int r= max(p,len); /* as the mission stated for r */
     for( i=0 ; i<r ; i++ )
     {
-        if(i==0) c[i]= modolo( (a[i]+b[i]) , p ); /* if i==0 theres only one option */
+        if(i==0) c[i]= modulo( (a[i]+b[i]) , p ); /* if i==0 theres only one option */
         else
         {
         c[i]= p+1; /* making sure the undefined value wont be smaller than the res */
@@ -88,7 +88,7 @@ void minPlusConv(int p, int len, int a[MAX], int b[MAX], int c[MAX])
                 for( k=0 ; k<p ; k++ ) /* checking the same a[j] for all indexs in array b (b[k]) */
                 {
                     if((j+k)==i) /* j+k must be equale to i */
-                        c[i]= min( c[i] , (modolo((a[j]+b[k]),p)) ); /* switching c[i] only if the result is smaller than the current c[i] */ 
+                        c[i]= min( c[i] , (modulo((a[j]+b[k]),p)) ); /* switching c[i] only if the result is smaller than the current c[i] */ 
                 }
             }
         }
@@ -107,10 +107,10 @@ int power(int base, int power)
     return sum;
 }
 
-/* func that calculates modolo*/
-int modolo(int num, int p)
+/* func that calculates modulo*/
+int modulo(int num, int p)
 {
-    return (num<0)? num%p+p : num%p; /* modolo is always positive */
+    return (num%p<0)? num%p+p : num%p; /* modolo is always positive */
 }
 
 /* func that calculates max of 2 numbers */
