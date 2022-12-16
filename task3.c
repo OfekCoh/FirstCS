@@ -110,7 +110,7 @@ int power(int base, int power)
 /* func that calculates modulo*/
 int modulo(int num, int p)
 {
-    return (num%p<0)? num%p+p : num%p; /* modolo is always positive */
+    return (num%p<0)? num%p+p : num%p; /* modulo is always positive */
 }
 
 /* func that calculates max of 2 numbers */
