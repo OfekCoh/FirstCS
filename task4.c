@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int checkIfPalindrome(int k, char str[], int n);    /* mission 1- check if palindrome           */
 void dividorsOf(int number);                        /* mission 2- print divdidors               */
 void manyKReverses(int k, char str[], int n);       /* mission 3- reverse array                 */
